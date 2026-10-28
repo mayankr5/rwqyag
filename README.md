@@ -19,7 +19,8 @@ backend/            Python (FastAPI)
 frontend/           React (Vite) + Recharts dashboard
   src/App.jsx       Controls, KPI tiles, forecast-vs-actual and daily error charts
 Dockerfile          Multi-stage build: frontend -> static files served by FastAPI
-heroku.yml          Heroku container deploy
+api/index.py        Vercel serverless entry point (wraps the FastAPI app)
+vercel.json         Vercel build + routing config
 ```
 
 ## Running it
@@ -38,11 +39,11 @@ cd backend && .venv/bin/pytest                    # tests
 ```
 
 ## Deployment
-Heroku (container stack):
+Vercel (React static build + FastAPI as a Python serverless function via `api/index.py`, see `vercel.json`):
 ```bash
-heroku create && heroku stack:set container && git push heroku main
+npx vercel deploy --prod
 ```
-Live app: _TODO: add link_
+Live app: https://wind-forecast-dashboard-mu.vercel.app
 
 ## AI usage
 This project was built with help from Claude Code (Anthropic) for scaffolding, code and documentation. All logic was reviewed and checked against live Elexon data.
