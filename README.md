@@ -46,4 +46,4 @@ npx vercel deploy --prod
 Live app: https://wind-forecast-dashboard-mu.vercel.app
 
 ## AI usage
-This project was built with help from Claude Code (Anthropic) for scaffolding, code and documentation. All logic was reviewed and checked against live Elexon data.
+AI coding tools were used to help with scaffolding, code and documentation. All logic was reviewed and checked against live Elexon data.
